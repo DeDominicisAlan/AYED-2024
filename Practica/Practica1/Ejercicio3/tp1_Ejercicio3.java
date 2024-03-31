@@ -1,6 +1,6 @@
 package ejercicio3;
 
-public class tp1.ejercicio3 {
+public class tp1_Ejercicio3 {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
