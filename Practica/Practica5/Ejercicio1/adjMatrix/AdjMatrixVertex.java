@@ -1,40 +1,36 @@
-package tp5.ejercicio1Alumno.adjMatrix;
+package tp5.ejercicio1.adjMatrix;
 
-import tp5.ejercicio1Alumno.Vertex;
+import tp5.ejercicio1.Vertex;
 
-public class AdjMatrixVertex<T> implements Vertex<T>{
+public class AdjMatrixVertex<T> implements Vertex<T> {
 	private T data;
 	private int position;
 	
-	public AdjMatrixVertex(T data, int position) {
+	/**
+	 * Constructor del vértices.  Solo se crean desde el grafo.
+	 */
+	AdjMatrixVertex(T data, int position) {
 		this.data = data;
 		this.position = position;
 	}
 	
-	@Override
 	public T getData() {
-		// TODO Auto-generated method stub
-		return data;
+		return this.data;
 	}
-
-	@Override
-	public void SetData(T data) {
-		// TODO Auto-generated method stub
+	
+	public void setData(T data) {
 		this.data = data;
 	}
 
-	@Override
 	public int getPosition() {
-		// TODO Auto-generated method stub
 		return position;
 	}
 
-	public void setPosition(int position) {
+	void setPosition(int position) {
 		this.position = position;
 	}
-	
-	public void decrementPosition() {
+
+	void decrementPosition() {
 		this.position--;
 	}
-	
 }

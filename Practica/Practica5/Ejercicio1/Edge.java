@@ -1,21 +1,19 @@
-package tp5.ejercicio1Alumno;
+package tp5.ejercicio1;
 
 public interface Edge<T> {
-
-	public Vertex<T> target();
+	
 	/**
-	 * Retorna el vertice destino de la arista
-	 * Es decir, A apunta a B
-	 * entonces retorna B
+	 * Retorna el vértice destino de la arista.
+	 * 
 	 * @return
 	 */
-	
-	public int getWeight();
+	public Vertex<T> getTarget();
 	
 	/**
 	 * Retorna el peso de la arista
 	 * 
 	 * @return
 	 */
-	
+	public int getWeight();
+
 }

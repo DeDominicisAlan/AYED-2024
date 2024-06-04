@@ -1,26 +1,27 @@
-package tp5.ejercicio1Alumno.adjMatrix;
+package tp5.ejercicio1.adjMatrix;
 
-import tp5.ejercicio1Alumno.Edge;
-import tp5.ejercicio1Alumno.Vertex;
+import tp5.ejercicio1.Edge;
+import tp5.ejercicio1.Vertex;
 
-public class AdjMatrixEdge<T> implements Edge<T>{
+public class AdjMatrixEdge<T> implements Edge<T> {
 	private Vertex<T> target;
 	private int weight;
-
-	public AdjMatrixEdge(Vertex<T> target,int weight) {
-		this.weight = weight;
+	
+	/**
+	 * Constructor de las aristas.  Solo se crean desde el grafo.
+	 */
+	AdjMatrixEdge(Vertex<T> target, int weight){
 		this.target = target;
+		this.weight = weight;
 	}
 	
-	public int getWeight() {
-		return weight;
+	@Override
+	public Vertex<T> getTarget() {
+		return target;
 	}
 
 	@Override
-	public Vertex<T> target() {
-		// TODO Auto-generated method stub
-		return target;
+	public int getWeight() {
+		return weight;
 	}
-	
-	
 }

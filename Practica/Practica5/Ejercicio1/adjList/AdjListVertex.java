@@ -1,15 +1,19 @@
-package tp5.ejercicio1Alumno.adjList;
-
-import tp5.ejercicio1Alumno.*;
+package tp5.ejercicio1.adjList;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdjListVertex<T> implements Vertex<T>{
+import tp5.ejercicio1.Edge;
+import tp5.ejercicio1.Vertex;
+
+public class AdjListVertex<T> implements Vertex<T> {
 	private T data;
 	private int position;
 	private List<Edge<T>> edges;
 	
+	/**
+	 *  Constructor del vértices. Solamente se crean desde el grafo. 
+	 */
 	public AdjListVertex(T data, int position) {
 		this.data = data;
 		this.position = position;
@@ -18,51 +22,55 @@ public class AdjListVertex<T> implements Vertex<T>{
 	
 	@Override
 	public T getData() {
-		return data;
+		return this.data;
 	}
 
 	@Override
-	public void SetData(T data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 
 	@Override
 	public int getPosition() {
-		return position;
+		return this.position;
 	}
 	
-	public List<Edge<T>> getEdges(){
-		return edges;
-	}
-	
-	void decrementPosition() {
+	public void decrementPosition() {
 		this.position--;
 	}
-	
+
 	void connect(Vertex<T> destination) {
 		this.connect(destination, 1);
 	}
-	
+
 	void connect(Vertex<T> destination, int weight) {
-		Edge<T> edge = getEdge(destination);
-		if(edge == null) {
-			edges.add(new AdjListEdge<T>(destination, weight));
+		Edge<T> edge = this.getEdge(destination);
+		if (edge == null) {
+			// se crea solo si no existe
+			this.edges.add(new AdjListEdge<>(destination, weight));
 		}
-	}
-	
-	void disconnect(Vertex<T> destination) {
-		Edge<T> edge = getEdge(destination);
-		if(edge != null)
-			edges.remove(edge);
-	}
-	
-	public Edge<T> getEdge(Vertex<T> target){
-		for(Edge <T> edge : edges) {
-			if(edge.target() == target)
-				return edge;
-		}
-		
-		return null;
 	}
 
+	void disconnect(Vertex<T> destination) {
+		Edge<T> edge = this.getEdge(destination);
+		if (edge != null) {
+			this.edges.remove(edge);
+		}
+	}
+
+	public List<Edge<T>> getEdges() {
+		return this.edges;
+	}
+
+	/**
+	 * Retorna, si es que existe, la arista hacia el vertice recibido.
+	 */
+	public Edge<T> getEdge(Vertex<T> destination) {
+		for (Edge<T> edge : this.edges) {
+			if (edge.getTarget() == destination) {
+				return edge;
+			}
+		}
+		return null;
+	}
 }

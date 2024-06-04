@@ -1,18 +1,22 @@
-package tp5.ejercicio1Alumno.adjList;
+package tp5.ejercicio1.adjList;
 
-import tp5.ejercicio1Alumno.*;
+import tp5.ejercicio1.Edge;
+import tp5.ejercicio1.Vertex;
 
-public class AdjListEdge<T> implements Edge<T>{
+public class AdjListEdge<T> implements Edge<T> {
 	private Vertex<T> target;
 	private int weight;
 	
-	public AdjListEdge(Vertex<T> target, int weight) {
-		this.weight = weight;
+	/**
+	 * Crea una arista.  Se invoca desde AdjListGraph.
+	 */
+	AdjListEdge(Vertex<T> target, int weight){
 		this.target = target;
+		this.weight = weight;
 	}
 	
 	@Override
-	public Vertex<T> target() {
+	public Vertex<T> getTarget() {
 		return target;
 	}
 
@@ -20,5 +24,4 @@ public class AdjListEdge<T> implements Edge<T>{
 	public int getWeight() {
 		return weight;
 	}
-
 }

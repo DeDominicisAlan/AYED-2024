@@ -1,26 +1,25 @@
-package tp5.ejercicio1Alumno;
+package tp5.ejercicio1;
 
 public interface Vertex<T> {
-
+	
+	/**
+	 * Retorna el dato del vértice.
+	 * 
+	 * @return
+	 */
 	public T getData();
+
 	/**
-	 * Retorna el dato del vertice o nodo.
-	*
-	*@return
-	*/
-	
-	public void SetData(T data);
-	/**
-	 * Reemplaza el valor del vertice o nodo.
+	 * Reemplaza el dato del vértice.
 	 * 
-	 * @param data
+	 * @param dato
 	 */
-	
+	public void setData(T data);
+
+	/**
+	 * Retorna la posición del vértice en el grafo.
+	 * 
+	 * @return
+	 */
 	public int getPosition();
-	/**Retorna la posicion del vertice o nodo, en el grafo.
-	 * 
-	 * @return 
-	 */
-	
-	
 }
